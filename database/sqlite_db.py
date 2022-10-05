@@ -1,12 +1,11 @@
 import psycopg2 as sq
-from tkinter import NO
-from create_refbot import bot
+from config import DB_URI
 
 # ================================================== ЗАПРОСИ БД ДЛЯ КОРИСТУВАЧІВ ======================================================
 # Підключення до БД
 def sql_start():
     global base, cur
-    base = sq.connect('database/database.db')
+    base = sq.connect(DB_URI)
     cur = base.cursor()
     if base:
         print('БД ПОДКЛЮЧЕНА')
